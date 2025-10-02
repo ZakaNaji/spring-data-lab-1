@@ -21,11 +21,11 @@ public class LabRunner {
             //catalogService.discontinueSomeProductsAndListActiveOnes();
 
             // EX-2: specifications + projections paging:
-            System.out.println("--- Ex2 ---");
-            catalogService.searchCatalogDemo();
+            //catalogService.searchCatalogDemo();
 
             // EX-3: solve N+1 via entity graphs / fetch-join:
-            // catalogService.listProductsWithCategoriesDemo();
+            System.out.println("--- Ex2 ---");
+            catalogService.listProductsWithCategoriesDemo();
 
             // EX-4: checkout flow with optimistic locking on stock:
             // checkoutService.simulateConcurrentCheckouts();

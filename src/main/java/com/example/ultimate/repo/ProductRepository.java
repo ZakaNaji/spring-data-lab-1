@@ -13,6 +13,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 
     // --- SOFT-DELETE-1 ---
     Optional<Product> findBySkuAndDeletedFalse(String sku);
+    @EntityGraph(attributePaths = {"primaryCategory"})
     Page<Product> findAllByDeletedFalse(Pageable pageable);
 
     // --- N+1-1 ---

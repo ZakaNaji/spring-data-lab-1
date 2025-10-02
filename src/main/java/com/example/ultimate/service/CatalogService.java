@@ -81,8 +81,8 @@ public class CatalogService {
     public void listProductsWithCategoriesDemo() {
         // --- N+1-1 ---
         // Call your @EntityGraph method to fetch category eagerly for latest products
-        // List<Product> latest = productRepository.findAllByDeletedFalse(PageRequest.of(0, 50, Sort.by("createdAt").descending())).getContent();
-        // latest.forEach(p -> System.out.println(p.getName() + " / " + (p.getPrimaryCategory() != null ? p.getPrimaryCategory().getName() : "-")));
+        List<Product> latest = productRepository.findAllByDeletedFalse(PageRequest.of(0, 50, Sort.by("createdAt").descending())).getContent();
+        latest.forEach(p -> System.out.println(p.getName() + " / " + (p.getPrimaryCategory() != null ? p.getPrimaryCategory().getName() : "-")));
     }
 
     @Transactional
