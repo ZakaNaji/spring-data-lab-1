@@ -9,7 +9,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     // --- FETCHJOIN-PAGE-1 ---
     // TODO: Page orders with lines pre-fetched; provide custom countQuery.
-    // @Query(value = "select distinct o from Order o left join fetch o.lines where o.user.id = :userId",
-    //        countQuery = "select count(o) from Order o where o.user.id = :userId")
-    // Page<Order> pageOrdersWithLines(@Param("userId") Long userId, Pageable pageable);
+    @Query(value = "select distinct o from Order o left join fetch o.lines where o.user.id = :userId",
+           countQuery = "select count(o) from Order o where o.user.id = :userId")
+    Page<Order> pageOrdersWithLines(@Param("userId") Long userId, Pageable pageable);
 }

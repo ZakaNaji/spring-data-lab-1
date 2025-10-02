@@ -18,17 +18,3 @@ public abstract class Promotion {
     @Column(nullable = false)
     private String name;
 }
-
-@Entity
-@DiscriminatorValue("PERCENT")
-class PercentagePromotion extends Promotion {
-    @Column(nullable = false, precision = 5, scale = 2)
-    private BigDecimal percentOff;
-}
-
-@Entity
-@DiscriminatorValue("FIXED")
-class FixedPromotion extends Promotion {
-    @Column(nullable = false, precision = 19, scale = 2)
-    private BigDecimal amountOff;
-}

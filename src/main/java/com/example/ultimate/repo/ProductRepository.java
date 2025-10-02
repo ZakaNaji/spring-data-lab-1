@@ -29,7 +29,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 
     // --- BULK-1 ---
     // TODO: Bulk price drop. Use clearAutomatically to avoid stale PC.
-    // @Modifying(clearAutomatically = true)
-    // @Query("update Product p set p.price = p.price * (1 - :ratio) where p.deleted=false and p.primaryCategory.id in :categoryIds")
-    // int applyPriceDrop(@Param("ratio") double ratio, @Param("categoryIds") List<Long> categoryIds);
+    @Modifying(clearAutomatically = true)
+    @Query("update Product p set p.price = p.price * (1 - :ratio) where p.deleted=false and p.primaryCategory.id in :categoryIds")
+    int applyPriceDrop(@Param("ratio") double ratio, @Param("categoryIds") List<Long> categoryIds);
 }

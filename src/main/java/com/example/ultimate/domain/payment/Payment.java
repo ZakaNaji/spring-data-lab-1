@@ -26,17 +26,3 @@ public abstract class Payment {
     @Column(nullable = false)
     private OffsetDateTime paidAt;
 }
-
-@Entity
-@Table(name = "card_payments")
-class CardPayment extends Payment {
-    @Column(nullable = false, length = 4)
-    private String last4;
-}
-
-@Entity
-@Table(name = "wallet_payments")
-class WalletPayment extends Payment {
-    @Column(nullable = false, length = 32)
-    private String provider;
-}
