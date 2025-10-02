@@ -15,10 +15,11 @@ public class LabRunner {
             ReportingService reportingService) {
         return args -> {
             // Enable one exercise at a time. Follow README tasks.
-            // catalogService.seedDemoCatalog(); // EX-0 seed data
+            catalogService.seedDemoCatalog(); // EX-0 seed data
 
             // EX-1: implement soft delete & query filters, then run:
-            // catalogService.discontinueSomeProductsAndListActiveOnes();
+            System.out.println("--- Ex1 ---");
+            catalogService.discontinueSomeProductsAndListActiveOnes();
 
             // EX-2: specifications + projections paging:
             // catalogService.searchCatalogDemo();

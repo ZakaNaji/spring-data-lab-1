@@ -55,11 +55,11 @@ public class CatalogService {
     @Transactional
     public void discontinueSomeProductsAndListActiveOnes() {
         // --- SOFT-DELETE-1 ---
-        // Product p = productRepository.findBySkuAndDeletedFalse("BOOK-001").orElseThrow();
-        // p.setDeleted(true);
-        // em.flush();
-        // Page<Product> page = productRepository.findAllByDeletedFalse(PageRequest.of(0, 10));
-        // System.out.println("Active products: " + page.getContent().size());
+        Product p = productRepository.findBySkuAndDeletedFalse("BOOK-001").orElseThrow();
+        p.setDeleted(true);
+        em.flush();
+        Page<Product> page = productRepository.findAllByDeletedFalse(PageRequest.of(0, 10));
+        System.out.println("Active products: " + page.getContent().size());
     }
 
     @Transactional(readOnly = true)

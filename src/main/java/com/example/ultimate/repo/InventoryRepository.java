@@ -1,6 +1,7 @@
 package com.example.ultimate.repo;
 
 import com.example.ultimate.domain.catalog.InventoryItem;
+import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.data.repository.query.Param;
 
