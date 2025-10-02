@@ -18,11 +18,11 @@ public class LabRunner {
             catalogService.seedDemoCatalog(); // EX-0 seed data
 
             // EX-1: implement soft delete & query filters, then run:
-            System.out.println("--- Ex1 ---");
-            catalogService.discontinueSomeProductsAndListActiveOnes();
+            //catalogService.discontinueSomeProductsAndListActiveOnes();
 
             // EX-2: specifications + projections paging:
-            // catalogService.searchCatalogDemo();
+            System.out.println("--- Ex2 ---");
+            catalogService.searchCatalogDemo();
 
             // EX-3: solve N+1 via entity graphs / fetch-join:
             // catalogService.listProductsWithCategoriesDemo();

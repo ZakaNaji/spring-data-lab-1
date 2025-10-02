@@ -22,9 +22,9 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 
     // --- DTO-1 ---
     // TODO: Provide a lightweight projection for listings
-    // @Query("select new com.example.ultimate.service.dto.ProductListItem(p.id, p.sku, p.name, p.price, c.name) " +
-    //        "from Product p left join p.primaryCategory c where p.deleted=false")
-    // Page<ProductListItem> listItems(Pageable pageable);
+    @Query("select new com.example.ultimate.service.dto.ProductListItem(p.id, p.sku, p.name, p.price, c.name) " +
+           "from Product p left join p.primaryCategory c where p.deleted=false")
+    Page<ProductListItem> listItems(Pageable pageable);
 
     // --- BULK-1 ---
     // TODO: Bulk price drop. Use clearAutomatically to avoid stale PC.

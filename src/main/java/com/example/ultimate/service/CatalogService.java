@@ -66,8 +66,15 @@ public class CatalogService {
     public void searchCatalogDemo() {
         // --- SPEC-1 + DTO-1 ---
         // Build a dynamic Specification: priceBetween, categoryIn, nameContains
-        // Page<ProductListItem> page = productRepository.listItems(PageRequest.of(0, 10));
-        // System.out.println("Items page size = " + page.getContent().size());
+        //var cat = categoryRepository.findByName("Books").get();
+        //var low = BigDecimal.valueOf(30);
+        //var high = BigDecimal.valueOf(50);
+        //Page<Product> page = productRepository.findAll(
+        //        ProductSpecification.findProductWithPriceBtwAndInCategoryAndNameContains(low, high, cat, "Hibernate"),
+        //        PageRequest.of(0, 10));
+        Page<ProductListItem> page = productRepository.listItems(PageRequest.of(0, 10));
+        System.out.println("Items page size = " + page.getContent().size());
+        System.out.println(page.getContent().get(0));
     }
 
     @Transactional(readOnly = true)
