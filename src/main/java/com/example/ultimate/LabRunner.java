@@ -24,11 +24,11 @@ public class LabRunner {
             //catalogService.searchCatalogDemo();
 
             // EX-3: solve N+1 via entity graphs / fetch-join:
-            System.out.println("--- Ex2 ---");
-            catalogService.listProductsWithCategoriesDemo();
+            //catalogService.listProductsWithCategoriesDemo();
 
             // EX-4: checkout flow with optimistic locking on stock:
-            // checkoutService.simulateConcurrentCheckouts();
+            System.out.println("--- Ex4 ---");
+            checkoutService.simulatePessimisticLockContention(1l);
 
             // EX-5: pagination with fetch-join + custom countQuery:
             // catalogService.pageOrdersWithLinesDemo();
